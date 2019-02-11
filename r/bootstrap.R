@@ -15,8 +15,7 @@ boot2 = matrix(0, ncol=2, nrow=1000)
 
 # Go sample by sample in an explicit loop
 # Save each set of coefficients (intercept, slope) in a single row of boot2
-for(i in 1:1000)
-{
+for(i in 1:1000) {
 	myindices = sample(1:nrow(Galton), nrow(Galton), replace=TRUE)
 	lmtemp = lm(height~mother, data=Galton, subset=myindices)
 	boot2[i,] = coef(lmtemp)
