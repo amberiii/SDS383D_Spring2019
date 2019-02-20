@@ -98,4 +98,4 @@ thetahat - 1.96*thetahat_se
 thetahat + 1.96*thetahat_se
 
 # What is a key assumption of this method?  hint:
-plot(ehat ~ jitter(Conc), data=chym)
+plot(eps ~ jitter(Conc), data=chym)
