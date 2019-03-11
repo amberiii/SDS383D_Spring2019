@@ -2,6 +2,15 @@
 
 Here are links to the GitHub pages of folks in the course.  This will facilitate peer review, as well as make it easy to see how your classmates are tackling some particularly thorny problem.  
 
+[Tyler Buffington](https://github.com/tbuffington7/statmod)  
+[Ahmet Budak](https://github.com/afbudak/SDS383D-Spring2019)  
+[Preston Biro](https://github.com/prestonbiro/SDS383D)  
+[Travis Lilley](https://github.com/trlilley123/SDS-383D-Statistical-Modeling-II-Spring-2019)  
+[Piaoping Jiang](https://github.com/amberiii/Stats-Modelling2_sp19)  
+[Korawat Tanwisuth](https://github.com/tanwisu2/SDS384D-Modelling-II)  
+[Shuying Wang](https://github.com/ShuyingWang/SDS383D)  
+
+
 
 
 ### Goals of peer review
