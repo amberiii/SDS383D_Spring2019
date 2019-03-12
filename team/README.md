@@ -2,22 +2,27 @@
 
 Here are links to the GitHub pages of folks in the course.  This will facilitate peer review, as well as make it easy to see how your classmates are tackling some particularly thorny problem.  
 
+[Preston Biro](https://github.com/prestonbiro/SDS383D)  
 [Tyler Buffington](https://github.com/tbuffington7/statmod)  
 [Ahmet Budak](https://github.com/afbudak/SDS383D-Spring2019)  
-[Preston Biro](https://github.com/prestonbiro/SDS383D)  
+[Jan-Michael Cabrera](https://github.com/janmichaelcabrera/SDS383D)  
+[Jingjing Fan](https://github.com/jfan25/sds-383)  
+[Xizewen Han](https://github.com/XzwHan/SDS383D-StatisticalModelingII)  
+[Yilin He](https://github.com/hylBen/Courses/tree/master/Learning/SDS-383D-STATS_MODELING_II)  
 [Travis Lilley](https://github.com/trlilley123/SDS-383D-Statistical-Modeling-II-Spring-2019)  
+[Qiaohui Lin](https://github.com/qiaohuilin/SDS383)  
 [Piaoping Jiang](https://github.com/amberiii/Stats-Modelling2_sp19)  
 [Korawat Tanwisuth](https://github.com/tanwisu2/SDS384D-Modelling-II)  
+[Kristen Tuggle](https://github.com/ket959/Statistical-Modeling-2)  
 [Shuying Wang](https://github.com/ShuyingWang/SDS383D)  
-
-
 
 
 ### Goals of peer review
 
 Your primary obligation is to be helpful to your reviewee.  Focus on constructive criticism; deficits in code or derivations are opportunities to improve.  
 
-Here are some ways you might consider helping out:  
+Here are some ways you might consider helping out:   
+
 0) Helping with overall coding style.  [Hadley Wickham](http://adv-r.had.co.nz/Style.html) has a nice R style guide.  The important thing is not that you ape any one person's coding style, but that you adopt _some_ consistent style (i.e. set of conventions about you write code).  
 1) Pointing out where code could be made more readable, whether that involves restructuring, commenting better, using more informative variable names, proposing a cleaner directory structure, etc.  
 2) Suggesting specific efficiency or stability improvements in code.  
