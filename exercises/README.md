@@ -16,7 +16,6 @@ It will also treat the multivariate normal distribution in (possibly excruciatin
 The goal of [Exercises 2](exercises02-SDS383D.pdf) is to get you comfortable with the use of conjugate priors in Gaussian models.  It finishes with a cool use of hierarchical modeling to fit a regression model with heavy-tailed errors.  
 
 
-<!-- 
 ## Exercises 3: Linear smoothing and Gaussian processes
 
 The goal of [Exercises 3](exercises03-SDS383D.pdf) is to equip you with some simple building blocks for nonlinear curve fitting.  Yes, it turns out that "linear smoothing" is used for nonlinear curve fitting -- this sounds like a contradiction, but you'll see what it entails and why it makes sense.  Here both Bayesian and frequentist approaches feature equally.  
@@ -35,6 +34,5 @@ The following papers/readings provide useful background for this section.  I'll 
 - [Fitting mixed-effects models by REML](http://web.mit.edu/xiuming/www/docs/tutorials/ReML.pdf).  [How it works in the lme4 R package](https://cran.r-project.org/web/packages/lme4/vignettes/Theory.pdf).  
 - [Simon Jackman's paper on spatial voting models](https://academic.oup.com/pan/article-abstract/9/3/227/1453708/Multidimensional-Analysis-of-Roll-Call-Data-via).  You can find an application of this framework in [our paper on family-planning legislation in the Texas Legislature.](https://www.ncbi.nlm.nih.gov/pubmed/26794846)  
 
- -->
 
 
