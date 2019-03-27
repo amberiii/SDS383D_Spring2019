@@ -71,5 +71,3 @@ microbenchmark(
 	Exp2Sigma_R1(x, kappa[1], kappa[2], kappa[3]),
 	Exp2Sigma_R2(x, kappa[1], kappa[2], kappa[3]),
 	times=10)
-
-
