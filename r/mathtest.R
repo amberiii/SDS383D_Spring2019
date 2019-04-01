@@ -11,3 +11,6 @@ schoolsizes = as.numeric(summary(mathtest$school))
 
 # Notice the extremes tend to be for schools with low sample sizes
 plot(schoolsizes, schoolmeans, pch=19)
+sd(schoolmeans)
+
+summary(lm(mathscore ~ school, data=mathtest))
