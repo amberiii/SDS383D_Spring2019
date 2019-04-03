@@ -4,7 +4,7 @@ mathtest = read.csv('../data/mathtest.csv')
 
 # Take a subset:
 # fewer schools will illustrate effect of prior
-mathtest = subset(mathtest, school <= 10)
+# mathtest = subset(mathtest, school <= 10)
 
 # extract summary statistics
 y = mathtest$mathscore
@@ -18,6 +18,11 @@ P = length(ybari)
 
 #######
 # First with an inverse-gamma prior
+# y_it = mu + theta_i + e_it
+# theta_i ~ N(0, tau2)
+# tau2 ~ IG(1/2, 1/2)
+# p(sigma2) = Jeffreys
+# p(mu) = flat
 #######
 
 # Initialize
@@ -38,6 +43,7 @@ for(it in 1:(NMC+burn)) {
 	if(it %% 1000 == 0) cat("Iteration ", it, "\n")
 	
 	# Update mu
+	# marginalizing over the thetas
 	mu_var = 1/sum( Ni/(Ni*tau2 + sigma2) )
 	mu_mean = mu_var*sum( Ni/(Ni*tau2 + sigma2) * ybari)
 	mu = rnorm(1, mu_mean, sqrt(mu_var))
@@ -156,14 +162,14 @@ kappa2 = (school_hat2 - ybari)/ybari
 plot(Ni, abs(kappa2))
 
 # Posterior draws under tau2 ~ IG(1/2, 1/2)
-hist(tau2_save, 100, prob=TRUE)
+hist(tau2_save, 100, prob=TRUE, xlim=c(0,1))
 curve(dinvgamma(x, 1/2, 1/2), n=1000, add=TRUE, col='red')
 curve(2*dt(x, 1), n=1000, add=TRUE, col='blue')
 
 # Posterior draws under tau ~ C+(0,1)
 # More stacked against zero, but also a heavier tail
-hist(tau2_save2, 100, prob=TRUE)
-curve(dinvgamma(x, 1/2, 1/2), n=1000, add=TRUE, col='red')
+hist(sqrt(tau2_save2), 100, prob=TRUE, xlim=c(0,1))
+#curve(dinvgamma(x, 1/2, 1/2), n=1000, add=TRUE, col='red')
 curve(2*dt(x, 1), n=1000, add=TRUE, col='blue')
 
 # autocorrelation functions
@@ -176,3 +182,10 @@ abline(0,1)
 
 
 
+# prior draws
+draw1 = sqrt(1/rgamma(10000, 1/2, rate=1/2))
+draw2 = abs(rt(10000,1))
+
+
+hist(draw1, xlim=c(0,10), 100000)
+hist(draw2, xlim=c(0,10), 1000000)

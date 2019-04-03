@@ -1,5 +1,5 @@
 library(lme4)
-library(ggplot2)
+library(tidyverse)
 library(lattice)
 
 cheese = read.csv("../data/cheese.csv")
@@ -9,9 +9,33 @@ boxplot(log(vol) ~ disp, data=cheese)
 
 # confounders?
 plot(log(vol) ~ log(price), data=cheese)
-boxplot(log(price) ~ disp, data=cheese)
+boxplot(price ~ disp, data=cheese)
+boxplot(vol ~ store, data=cheese, log='y', las=2, cex.axis=0.6)
+boxplot(price ~ store, data=cheese, las=2, cex.axis=0.6)
 
-xyplot(log(vol) ~ log(price) | store, data=cheese)
+
+# main effects only
+# how much does display activity affect demand?
+lm1 = lm(log(vol) ~ log(price) + disp + store, data=cheese)
+confint(lm1) %>% head(5) %>% round(3)
+
+# does the presence of a display change price elasticity of demand?
+lm2 = lm(log(vol) ~ log(price) + disp + log(price):disp + store, data=cheese)
+confint(lm2) %>% round(3)
+
+# Does price elasticity of demand change store by store?
+lm3 = lm(log(vol) ~ log(price) + disp + log(price):disp + store + store:log(price), data=cheese)
+confint(lm3) %>% round(3)
+
+ggplot(subset(cheese, store == "SOUTH CAROLINA - WINN DIXIE")) +
+         geom_point(aes(x=price, y=log(vol), color=factor(disp)))
+
+ggplot(subset(cheese, store == "CHARLOTTE - BI LO")) +
+  geom_point(aes(x=price, y=log(vol), color=factor(disp)))
+
+ggplot(subset(cheese, store == "SOUTH CAROLINA - BI LO")) +
+  geom_point(aes(x=price, y=log(vol), color=factor(disp)))
+
 
 # common regression parameters across stores
 hlm1 = lmer(log(vol) ~ log(price) + disp + (1 | store), data=cheese)
